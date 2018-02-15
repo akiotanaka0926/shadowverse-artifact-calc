@@ -7,16 +7,22 @@
     <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-  <div class="container_body">
     <div class="container_main">
       <div class="item column1_box highlight_layout">アナライズ</div>
       <div class="item column2_box highlight_layout">エンシェント</div>
       <div class="item column3_box highlight_layout">ミスティック</div>
       <div class="item column4_box highlight_layout">レディアント</div>
+      <div class="deck column5_box highlight_layout">デッキ</div>
       <div id="analyze_counter" class="item column1_box number_layout line-height">0</div>
       <div id="ancient_counter" class="item column2_box number_layout line-height">0</div>
       <div id="mistic_counter" class="item column3_box number_layout line-height">0</div>
       <div id="radiant_counter" class="item column4_box number_layout line-height">0</div>
+      <div id="deck_counter" class="deck column5_box number_layout line-height">37</div>
+      <div class="column1_box">ドロー確率：<span id="analyze_probability">0.000</span>%</div>
+      <div class="column2_box">ドロー確率：<span id="ancient_probability">0.000</span>%</div>
+      <div class="column3_box">ドロー確率：<span id="mistic_probability">0.000</span>%</div>
+      <div class="column4_box">ドロー確率：<span id="radiant_probability">0.000</span>%</div>
+      <div class="column5_box"></div>
       <a href="#" class="square_btn item plus_layout"><div id="analyze_plus_one">+1</div></a>
       <a href="#" class="square_btn item plus_two_layout"><div id="analyze_plus_two">+2</div></a>
       <a href="#" class="square_btn item minus_layout"><div id="analyze_minus">-1</div></a>
@@ -29,23 +35,18 @@
       <a href="#" class="square_btn item plus_layout"><div id="radiant_plus_one">+1</div></a>
       <a href="#" class="square_btn item plus_two_layout"><div id="radiant_plus_two">+2</div></a>
       <a href="#" class="square_btn item minus_layout"><div id="radiant_minus">-1</div></a>
-      <div style="margin-top:50px;" class="column_full_box">
-        <input id="sync_deck" class="sync_deck" type="checkbox" value="1" checked="checked">
-        <label for="sync_deck">デッキと同期して増減する</label>
-      </div>
-      <div id="reset" class="reset_button column_full_box" style="width:100%;">リセット</div>
-    </div>
-    <div class="container_sub">
-      <div class="deck column1_box highlight_layout">デッキ</div>
-      <div id="deck_counter" class="deck column1_box number_layout line-height">37</div>
       <a href="#" class="square_btn deck plus_layout"><div id="deck_plus_two">+2</div></a>
       <a href="#" class="square_btn deck minus_layout"><div id="deck_minus">-1</div></a>
       <a href="#" class="square_btn deck machina"><div id="deck_machina">マキナ！</div></a>
-      <div style="margin-top:50px;" class="column1_box">
+      <div class="column_full_box">
+        <input id="sync_deck" class="sync_deck" type="checkbox" value="1" checked="checked">
+        <label for="sync_deck">デッキと同期して増減する</label>
+      </div>
+      <div class="column5_box">
         デッキ枚数直接変更<input id="deck_num" type="number" size="15" maxlength="2" value=37>
       </div>
-      <div id="reset_deck" class="reset_button column1_box" style="width:100%;">デッキリセット</div>
+      <div id="reset" class="reset_button column_full_box" style="width:100%;">リセット</div>
+      <div id="reset_deck" class="reset_button column5_box" style="width:100%;">デッキリセット</div>
     </div>
-  </div>
 </body>
 </html>

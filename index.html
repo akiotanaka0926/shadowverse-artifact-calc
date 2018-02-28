@@ -1,52 +1,181 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>シャドバ アーティファクト管理</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>シャドバ アーティファクト管理</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </head>
+
 <body>
-    <div class="container_main">
-      <div class="item column1_box highlight_layout">アナライズ</div>
-      <div class="item column2_box highlight_layout">エンシェント</div>
-      <div class="item column3_box highlight_layout">ミスティック</div>
-      <div class="item column4_box highlight_layout">レディアント</div>
-      <div class="deck column5_box highlight_layout">デッキ</div>
-      <div id="analyze_counter" class="item column1_box number_layout line-height">0</div>
-      <div id="ancient_counter" class="item column2_box number_layout line-height">0</div>
-      <div id="mistic_counter" class="item column3_box number_layout line-height">0</div>
-      <div id="radiant_counter" class="item column4_box number_layout line-height">0</div>
-      <div id="deck_counter" class="deck column5_box number_layout line-height">37</div>
-      <div class="column1_box">ドロー確率：<span id="analyze_probability">0.000</span>%</div>
-      <div class="column2_box">ドロー確率：<span id="ancient_probability">0.000</span>%</div>
-      <div class="column3_box">ドロー確率：<span id="mistic_probability">0.000</span>%</div>
-      <div class="column4_box">ドロー確率：<span id="radiant_probability">0.000</span>%</div>
-      <div class="column5_box"></div>
-      <a href="#" class="square_btn item plus_layout"><div id="analyze_plus_one">+1</div></a>
-      <a href="#" class="square_btn item plus_two_layout"><div id="analyze_plus_two">+2</div></a>
-      <a href="#" class="square_btn item minus_layout"><div id="analyze_minus">-1</div></a>
-      <a href="#" class="square_btn item plus_layout"><div id="ancient_plus_one">+1</div></a>
-      <a href="#" class="square_btn item plus_two_layout"><div id="ancient_plus_two">+2</div></a>
-      <a href="#" class="square_btn item minus_layout"><div id="ancient_minus">-1</div></a>
-      <a href="#" class="square_btn item plus_layout"><div id="mistic_plus_one">+1</div></a>
-      <a href="#" class="square_btn item plus_two_layout"><div id="mistic_plus_two">+2</div></a>
-      <a href="#" class="square_btn item minus_layout"><div id="mistic_minus">-1</div></a>
-      <a href="#" class="square_btn item plus_layout"><div id="radiant_plus_one">+1</div></a>
-      <a href="#" class="square_btn item plus_two_layout"><div id="radiant_plus_two">+2</div></a>
-      <a href="#" class="square_btn item minus_layout"><div id="radiant_minus">-1</div></a>
-      <a href="#" class="square_btn deck plus_layout"><div id="deck_plus_two">+2</div></a>
-      <a href="#" class="square_btn deck minus_layout"><div id="deck_minus">-1</div></a>
-      <a href="#" class="square_btn deck machina"><div id="deck_machina">マキナ！</div></a>
-      <div class="column_full_box">
-        <input id="sync_deck" class="sync_deck" type="checkbox" value="1" checked="checked">
-        <label for="sync_deck">デッキと同期して増減する</label>
+  <header>アーティファクトカウントツール<br>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 item highlight_layout">アナライズ</div>
+            </div>
+            <div class="row">
+              <div id="analyze_counter" class="col-md-12 item number_layout line-height">0</div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">ドロー確率：<span id="analyze_probability">0.000</span>%</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_layout">
+                  <div id="analyze_plus_one">+1</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_two_layout">
+                  <div id="analyze_plus_two">+2</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item minus_layout">
+                  <div id="analyze_minus">-1</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 item highlight_layout">エンシェント</div>
+            </div>
+            <div class="row">
+              <div id="ancient_counter" class="col-md-12 item number_layout line-height">0</div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">ドロー確率：<span id="ancient_probability">0.000</span>%</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_layout">
+                  <div id="ancient_plus_one">+1</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_two_layout">
+                  <div id="ancient_plus_two">+2</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item minus_layout">
+                  <div id="ancient_minus">-1</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 item highlight_layout">ミスティック</div>
+            </div>
+            <div class="row">
+              <div id="mistic_counter" class="col-md-12 item number_layout line-height">0</div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">ドロー確率：<span id="mistic_probability">0.000</span>%</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_layout">
+                  <div id="mistic_plus_one">+1</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_two_layout">
+                  <div id="mistic_plus_two">+2</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item minus_layout">
+                  <div id="mistic_minus">-1</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 item highlight_layout">レディアント</div>
+            </div>
+            <div class="row">
+              <div id="radiant_counter" class="col-md-12 item number_layout line-height">0</div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">ドロー確率：<span id="radiant_probability">0.000</span>%</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_layout">
+                  <div id="radiant_plus_one">+1</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_two_layout">
+                  <div id="radiant_plus_two">+2</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item minus_layout">
+                  <div id="radiant_minus">-1</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 deck highlight_layout">デッキ</div>
+            </div>
+            <div class="row">
+              <div id="deck_counter" class="col-md-12 deck number_layout line-height">37</div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">&nbsp;</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#" class="square_btn deck plus_layout">
+                  <div id="deck_plus_two">+2</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn deck minus_layout">
+                  <div id="deck_minus">-1</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn deck machina">
+                  <div id="deck_machina">マキナ！</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div id="reset" class="reset_button" style="width:100%;">リセット</div>
+            <div class="column_full_box">
+              <input id="sync_deck" class="sync_deck" type="checkbox" value="1" checked="checked">
+              <label for="sync_deck">デッキと同期して増減する</label>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div id="reset_deck" class="reset_button" style="width:100%;">デッキリセット</div>
+            <div class="column5_box">
+              デッキ枚数直接変更<input id="deck_num" type="number" size="15" maxlength="2" value=37>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="column5_box">
-        デッキ枚数直接変更<input id="deck_num" type="number" size="15" maxlength="2" value=37>
-      </div>
-      <div id="reset" class="reset_button column_full_box" style="width:100%;">リセット</div>
-      <div id="reset_deck" class="reset_button column5_box" style="width:100%;">デッキリセット</div>
     </div>
+  </div>
 </body>
 </html>

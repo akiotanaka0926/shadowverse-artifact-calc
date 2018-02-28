@@ -1,11 +1,3 @@
-.container_main {
-  width: 100% ;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(15,1fr);
-  grid-template-rows: 40px 160px auto 80px auto auto;
-}
-
 .deck {
   background: #1DC8C6;
   padding: 10px;
@@ -20,54 +12,30 @@
   border: 3px solid #bbb;
 }
 
-.column1_box {
-  grid-column: 1 / 4;
-}
-
-.column2_box {
-  grid-column: 4 / 7;
-}
-
-.column3_box {
-  grid-column: 7 / 10;
-}
-
-.column4_box {
-  grid-column: 10 / 13;
-}
-
-.column5_box {
-  grid-column: 13 / 16;
-}
-
-.column_full_box {
-  grid-column: 1 / 13;
-}
-
 .highlight_layout {
   text-align: center;
 }
 
 .plus_layout {
-  font-size: 44px;
+  font-size: 1.6vw;
   text-align: center;
   background: #38BEFF;
 }
 
 .plus_two_layout {
-  font-size: 44px;
+  font-size: 1.6vw;
   text-align: center;
   background: #0082C3;
 }
 
 .machina {
-  font-size: 28px;
+  font-size: 0.88vw;
   text-align: center;
   background: #0082C3;
 }
 
 .minus_layout {
-  font-size: 44px;
+  font-size: 1.6vw;
   text-align: center;
   background: #E51400;
 }
@@ -79,7 +47,7 @@
 }
 
 .line-height {
- line-height: 160px;
+  line-height: 160px;
 }
 
 .square_btn {
@@ -88,38 +56,43 @@
   padding: 0.25em 0.5em;
   text-decoration: none;
   color: #FFF;
-  border-radius: 4px;/*角の丸み*/
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  /*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   font-weight: bold;
 }
 
-.square_btn:active {/*押したとき*/
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+.square_btn:active {
+  /*押したとき*/
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
 
 .reset_button {
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-    color: #000000;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 5px;
-    text-align: center;
-    vertical-align: middle;
-    overflow: hidden;
-    font-weight: bold;
-    background-image: -webkit-linear-gradient(#fed6e3 0%, #ffaaaa 100%);
-    background-image: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #000000;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  font-weight: bold;
+  background-image: -webkit-linear-gradient(#fed6e3 0%, #ffaaaa 100%);
+  background-image: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
 }
 
-.reset_button:active{/*押したとき*/
-    -ms-transform: translateY(2px);
-    -webkit-transform: translateY(2px);
-    transform: translateY(2px);/*沈むように*/
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-    background-image: -webkit-linear-gradient(#fed6e3 0%, #ffbcbc 100%);
-    background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);/*グラデーションを明るく*/
+.reset_button:active {
+  /*押したとき*/
+  -ms-transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  /*沈むように*/
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  background-image: -webkit-linear-gradient(#fed6e3 0%, #ffbcbc 100%);
+  background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);
+  /*グラデーションを明るく*/
 }

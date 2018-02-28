@@ -13,6 +13,7 @@
 
 <body>
   <header>アーティファクトカウントツール<br>
+    <a href="https://github.com/akiotanaka0926/shadowverse-artifact-calc/blob/gh-pages/README.md" target="_blank">使い方</a>
   </header>
   <div class="container-fluid">
     <div class="row">
@@ -162,14 +163,14 @@
         <div class="row">
           <div class="col-md-8">
             <div id="reset" class="reset_button" style="width:100%;">リセット</div>
-            <div class="column_full_box">
+            <div>
               <input id="sync_deck" class="sync_deck" type="checkbox" value="1" checked="checked">
               <label for="sync_deck">デッキと同期して増減する</label>
             </div>
           </div>
           <div class="col-md-2">
             <div id="reset_deck" class="reset_button" style="width:100%;">デッキリセット</div>
-            <div class="column5_box">
+            <div>
               デッキ枚数直接変更<input id="deck_num" type="number" size="15" maxlength="2" value=37>
             </div>
           </div>
@@ -177,5 +178,176 @@
       </div>
     </div>
   </div>
+
+  <div>
+    <input id="mirror_mode" class="mirror_mode" type="checkbox" value="1">
+    <label for="mirror_mode">ミラーマッチ用</label>
+  </div>
+
+  <header id="mirror_header" style="display:none;">対戦相手情報</header>
+  <div id="mirror" class="container-fluid" style="display:none;">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 item highlight_layout">アナライズ</div>
+            </div>
+            <div class="row">
+              <div id="mirror_analyze_counter" class="col-md-12 item number_layout line-height">0</div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">ドロー確率：<span id="mirror_analyze_probability">0.000</span>%</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_layout">
+                  <div id="mirror_analyze_plus_one">+1</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_two_layout">
+                  <div id="mirror_analyze_plus_two">+2</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item minus_layout">
+                  <div id="mirror_analyze_minus">-1</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 item highlight_layout">エンシェント</div>
+            </div>
+            <div class="row">
+              <div id="mirror_ancient_counter" class="col-md-12 item number_layout line-height">0</div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">ドロー確率：<span id="mirror_ancient_probability">0.000</span>%</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_layout">
+                  <div id="mirror_ancient_plus_one">+1</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_two_layout">
+                  <div id="mirror_ancient_plus_two">+2</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item minus_layout">
+                  <div id="mirror_ancient_minus">-1</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 item highlight_layout">ミスティック</div>
+            </div>
+            <div class="row">
+              <div id="mirror_mistic_counter" class="col-md-12 item number_layout line-height">0</div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">ドロー確率：<span id="mirror_mistic_probability">0.000</span>%</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_layout">
+                  <div id="mirror_mistic_plus_one">+1</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_two_layout">
+                  <div id="mirror_mistic_plus_two">+2</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item minus_layout">
+                  <div id="mirror_mistic_minus">-1</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 item highlight_layout">レディアント</div>
+            </div>
+            <div class="row">
+              <div id="mirror_radiant_counter" class="col-md-12 item number_layout line-height">0</div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">ドロー確率：<span id="mirror_radiant_probability">0.000</span>%</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_layout">
+                  <div id="mirror_radiant_plus_one">+1</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item plus_two_layout">
+                  <div id="mirror_radiant_plus_two">+2</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn item minus_layout">
+                  <div id="mirror_radiant_minus">-1</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="row">
+              <div class="col-md-12 deck highlight_layout">デッキ</div>
+            </div>
+            <div class="row">
+              <div id="mirror_deck_counter" class="col-md-12 deck number_layout line-height">37</div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">&nbsp;</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <a href="#" class="square_btn deck plus_layout">
+                  <div id="mirror_deck_plus_two">+2</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn deck minus_layout">
+                  <div id="mirror_deck_minus">-1</div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="#" class="square_btn deck machina">
+                  <div id="mirror_deck_machina">マキナ！</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div id="mirror_reset" class="reset_button" style="width:100%;">リセット</div>
+            <div>
+              <input id="mirror_sync_deck" class="mirror_sync_deck" type="checkbox" value="1" checked="checked">
+              <label for="mirror_sync_deck">デッキと同期して増減する</label>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div id="mirror_reset_deck" class="reset_button" style="width:100%;">デッキリセット</div>
+            <div>
+              デッキ枚数直接変更<input id="mirror_deck_num" type="number" size="15" maxlength="2" value=37>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -3,7 +3,8 @@ $(function() {
   var ancient_count = 0;
   var mistic_count = 0;
   var radiant_count = 0;
-  var deck_count = 37;
+  var prime_count = 0;
+  var deck_count = 36;
 
   var probability = function() {
     var analyze = (analyze_count / deck_count * 100).toFixed(3);
@@ -14,6 +15,8 @@ $(function() {
     $('#mistic_probability').text(mistic);
     var radiant = (radiant_count / deck_count * 100).toFixed(3);
     $('#radiant_probability').text(radiant);
+    var prime = (prime_count / deck_count * 100).toFixed(3);
+    $('#prime_probability').text(prime);
   }
 
   var changeDeckCount = function(modifyNumber) {
@@ -80,6 +83,20 @@ $(function() {
     changeDeckCount(-1);
   });
 
+  $('#prime_plus_one').click(function() {
+    $('#prime_counter').text(++prime_count);
+    changeDeckCount(1);
+  });
+  $('#prime_plus_two').click(function() {
+    prime_count += 2;
+    $('#prime_counter').text(prime_count);
+    changeDeckCount(2);
+  });
+  $('#prime_minus').click(function() {
+    $('#prime_counter').text(--prime_count);
+    changeDeckCount(-1);
+  });
+
   $('#deck_plus_two').click(function() {
     changeDeckCount(2);
   });
@@ -95,16 +112,18 @@ $(function() {
     ancient_count = 0;
     mistic_count = 0;
     radiant_count = 0;
+    prime_count = 0;
 
     $('#analyze_counter').text(analyze_count);
     $('#ancient_counter').text(ancient_count);
     $('#mistic_counter').text(mistic_count);
     $('#radiant_counter').text(radiant_count);
+    $('#prime_counter').text(prime_count);
     probability();
   });
 
   $('#reset_deck').click(function() {
-    deck_count = 37;
+    deck_count = 36;
 
     $('#deck_counter').text(deck_count);
     $('#deck_num').val(deck_count);
@@ -131,7 +150,8 @@ $(function() {
     var mirror_ancient_count = 0;
     var mirror_mistic_count = 0;
     var mirror_radiant_count = 0;
-    var mirror_deck_count = 37;
+    var mirror_prime_count = 0;
+    var mirror_deck_count = 36;
 
     var mirror_probability = function() {
       var analyze = (mirror_analyze_count / mirror_deck_count * 100).toFixed(3);
@@ -142,6 +162,8 @@ $(function() {
       $('#mirror_mistic_probability').text(mistic);
       var radiant = (mirror_radiant_count / mirror_deck_count * 100).toFixed(3);
       $('#mirror_radiant_probability').text(radiant);
+      var prime = (mirror_prime_count / mirror_deck_count * 100).toFixed(3);
+      $('#mirror_prime_probability').text(prime);
     }
 
     var mirror_changeDeckCount = function(modifyNumber) {
@@ -208,6 +230,20 @@ $(function() {
       mirror_changeDeckCount(-1);
     });
 
+    $('#mirror_prime_plus_one').click(function() {
+      $('#mirror_prime_counter').text(++mirror_prime_count);
+      mirror_changeDeckCount(1);
+    });
+    $('#mirror_prime_plus_two').click(function() {
+      mirror_prime_count += 2;
+      $('#mirror_prime_counter').text(mirror_prime_count);
+      mirror_changeDeckCount(2);
+    });
+    $('#mirror_prime_minus').click(function() {
+      $('#mirror_prime_counter').text(--mirror_prime_count);
+      mirror_changeDeckCount(-1);
+    });
+
     $('#mirror_deck_plus_two').click(function() {
       mirror_changeDeckCount(2);
     });
@@ -223,16 +259,18 @@ $(function() {
       mirror_ancient_count = 0;
       mirror_mistic_count = 0;
       mirror_radiant_count = 0;
+      mirror_prime_count = 0;
 
       $('#mirror_analyze_counter').text(mirror_analyze_count);
       $('#mirror_ancient_counter').text(mirror_ancient_count);
       $('#mirror_mistic_counter').text(mirror_mistic_count);
       $('#mirror_radiant_counter').text(mirror_radiant_count);
+      $('#mirror_prime_counter').text(mirror_prime_count);
       mirror_probability();
     });
 
     $('#mirror_reset_deck').click(function() {
-      mirror_deck_count = 37;
+      mirror_deck_count = 36;
 
       $('#mirror_deck_counter').text(mirror_deck_count);
       $('#mirror_deck_num').val(mirror_deck_count);

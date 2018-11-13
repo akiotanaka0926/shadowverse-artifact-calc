@@ -3,7 +3,7 @@
 - github-pagesを利用して単一ページで動作します。誰でも利用できます
 
 ## 使い方
-https://akiotanaka0926.github.io/shadowverse-artifact-calc/ を開くだけです。
+https://aqsword.github.io/shadowverse-artifact-calc/ を開くだけです。
 
 ## 説明
 

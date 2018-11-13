@@ -2,5 +2,5 @@
 
 git-pagesはこちら
 
-https://aqsword.github.io/shadowverse-artifact-calc/
+https://github.com/aqsword/shadowverse-artifact-calc/tree/gh-pages
 
